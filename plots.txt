@@ -1,0 +1,7 @@
+hotel type
+cancel number
+hotel type with cancelled 
+hotel with arrival month
+cancel with meal
+repeat guest with hotel type
+prevous booking not cancelled
