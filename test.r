@@ -4,7 +4,25 @@ setwd("D:\\Study\\Fourth year\\second term\\big data\\hotel-booking-demand-analy
 c <- "hello"
 data <- read.csv("hotel_bookings.csv")
 
-colors <- c("#8300fd", "#c12525")
+
+class(data$arrival_date_month)
+
+levels(data$arrival_date_month) = list(Jan = "January",
+                                       Feb = "February",
+                                       Mar = "March",
+                                       Apr = "April",
+                                       May = "May",
+                                       Jun = "June",
+                                       Jul = "July",
+                                       Aug = "August",
+                                       Sept = "September",
+                                       Oct = "October",
+                                       Nov = "November",
+                                       Dec = "December")
+levels(data$arrival_date_month)
+table(data$arrival_date_month)
+
+colors <- c("#8300fd", "#fbff7b")
 
 
 hotel <- table(data$hotel)
@@ -90,3 +108,57 @@ ggplot(country_city, aes(x = "", y = sort(Freq), colour=Var1, fill= Var1))+
   coord_polar("y", start = 0) +
   theme_void()
 
+
+
+# NOT RUN {
+## assign individual levels
+x <- gl(2, 4, 9)
+x <- as.data.frame(x)
+levels(x$x) <- list(xd = "low", fd = "2")
+levels(x$x)[1] <- "low"
+levels(x)[2] <- "high"
+x$x
+levels(x$x)
+
+lis <- list(                           Jan = "January",
+                                       Feb = "February",
+                                       Mar = "March",
+                                       Apr = "April",
+                                       May = "May",
+                                       Jun = "June",
+                                       Jul = "July",
+                                       Aug = "August",
+                                       Sep = "September",
+                                       Oct = "October",
+                                       Nov = "November",
+                                       Dec = "December")
+lis              
+levels(x$x) <- lis
+x
+## or as a group
+y <- gl(2, 4, 8)
+levels(y) <- c("low", "high")
+y
+
+## combine some levels
+z <- gl(3, 2, 12, labels = c("apple", "salad", "orange"))
+z
+levels(z) <- c("fruit", "veg", "fruit")
+z
+
+## same, using a named list
+z <- gl(3, 2, 12, labels = c("apple", "salad", "orange"))
+z
+levels(z) <- list("fruit" = c("apple","orange"),
+                  "veg"   = "salad")
+z
+
+## we can add levels this way:
+f <- factor(c("a","b"))
+levels(f) <- c("c", "a", "b")
+f
+
+f <- factor(c("a","b"))
+levels(f) <- list(C = "C", A = "a", B = "b")
+f
+# }
