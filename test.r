@@ -4,6 +4,9 @@ setwd("D:\\Study\\Fourth year\\second term\\big data\\hotel-booking-demand-analy
 c <- "hello"
 data <- read.csv("hotel_bookings.csv")
 
+purple <- "#AE57FF"
+red <- "#a45530"
+colors <- c(purple, red)
 
 class(data$arrival_date_month)
 
