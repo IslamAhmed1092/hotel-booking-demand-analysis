@@ -1,5 +1,8 @@
 library("ggplot2")
 library(randomcoloR)
+library(party)
+install.packages(tidyverse)
+library(tidyverse)
 setwd("D:\\Study\\Fourth year\\second term\\big data\\hotel-booking-demand-analysis")
 c <- "hello"
 data <- read.csv("hotel_bookings.csv")
@@ -165,3 +168,28 @@ f <- factor(c("a","b"))
 levels(f) <- list(C = "C", A = "a", B = "b")
 f
 # }
+
+
+colnames(data %>% select_if(is.character))
+
+is.character(data$hotel)
+
+
+library(party)
+
+# Create the input data frame.
+input.dat <- readingSkills[c(1:105),]
+
+# Give the chart file a name.
+png(file = "decision_tree.png")
+
+# Create the tree.
+  output.tree <- ctree(
+  nativeSpeaker ~ age + shoeSize + score, 
+  data = input.dat)
+
+# Plot the tree.
+plot(output.tree)
+
+# Save the file.
+dev.off()
