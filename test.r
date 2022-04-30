@@ -1,6 +1,7 @@
 library("ggplot2")
 library(randomcoloR)
 library(party)
+library(randomForest)
 install.packages(tidyverse)
 library(tidyverse)
 setwd("D:\\Study\\Fourth year\\second term\\big data\\hotel-booking-demand-analysis")
