@@ -1,2 +1,5 @@
 .Rhistory
 .RData
+/catboost_info
+train.csv
+test.csv
