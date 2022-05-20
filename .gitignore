@@ -4,3 +4,5 @@
 train.csv
 test.csv
 .ipynb_checkpoints/
+/LogReg/.ipynb_checkpoints/
+/knn/.ipynb_checkpoints/

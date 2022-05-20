@@ -1,7 +1,6 @@
 #!/home/islamahmed1092/anaconda3/bin/python
 
 import sys
-import numpy as np
 
 
 prev_key = '0'
@@ -19,4 +18,4 @@ for line in sys.stdin:
     length += 1   
     prev_key = key
 
-print(f'{prev_key},{summation}')
+print(f'{prev_key},{summation/length}')
